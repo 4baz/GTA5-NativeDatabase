@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Prototype";
+    src: url("/storage/fonts/Prototype.ttf")
+}
+
+#title {
+    color: floralwhite;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mainwindow {
+    text-align: left;
+    margin: 0 auto;
+    background: rgb(26, 26, 26);
+    border: 1px ghostwhite solid;
+    padding: 1em;
+    min-width: 800px;
+    width: 85%;
+    color: ghostwhite;
+}
+
+body {
+    background: darkslategray;
+    font-family: Tahoma,Verdana,sans;
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none
+}
+
+li {
+    color: ghostwhite;
+}
+
+a:link {
+    color: ghostwhite;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+#mainwindow {
+    text-align: left;
+    margin: 0 auto;
+    background: rgb(26, 26, 26);
+    border: 1px ghostwhite solid;
+    padding: 1em;
+    min-width: 800px;
+    width: 85%;
+    color: ghostwhite;
+}
+
+#nname {
+    color: ghostwhite;
+    text-decoration: none;
+}
+
+.funcbox {
+    display: block;
+    margin: 5px 0;
+    width: 800px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    border: 1px darkorange solid;
+}
+
+.datatype {
+    color: darkorange;
+}
+
+.nativeName {
+    color: lightgray;
+    font-family: consolas,"courier new",courier,monospace;
+    font-size: 12px;
+}
+
+.hash {
+    color: limegreen;
+}
+
+.parameterName {
+    color: dimgray;
+}
