@@ -75,7 +75,7 @@ a:hover {
 .nativeName {
     color: lightgray;
     font-family: consolas,"courier new",courier,monospace;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .hash {
