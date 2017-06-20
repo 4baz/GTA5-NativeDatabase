@@ -116,21 +116,20 @@ function openNamespaceTab(namespace) {
         const jHash = native.jhash;
         const params = native.params;
         const returnType = native.return_type;
-        const paramCount = native.param_count;
         const returnSize = native.return_size;
 
         htmlCode += "<li><a class='nativeName' id='func-" + n + "'>" + " 	•  " +
             "<span class='datatype'>" + returnType + " </span>" +
             name + "(";
 
-        for (let para = 0; para < paramCount; para++) {
+        for (let para = 0; para < params.length; para++) {
             const parameter = params[para];
 
             const type = parameter.type;
             const name = parameter.name;
 
             htmlCode += "<span class='datatype'>" + type + "  </span>" +
-                "<span class='parameterName'>" + name + (para !== paramCount - 1 ? ", " : "") + "</span>";
+                "<span class='parameterName'>" + name + (para !== params.length - 1 ? ", " : "") + "</span>";
         }
 
         htmlCode += ")  ";
