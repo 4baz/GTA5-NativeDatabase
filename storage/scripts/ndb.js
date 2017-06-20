@@ -134,7 +134,7 @@ function openNamespaceTab(namespace) {
         }
 
         htmlCode += ")  ";
-        htmlCode += "<span class='hash'>//  " + n + "  " + jHash + "</span>";
+        htmlCode += "<span class='hash'>//  " + n + (jHash !== undefined ? "  " + jHash : "") + "</span>";
     }
 
     htmlCode += "</ul>";
