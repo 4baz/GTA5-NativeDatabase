@@ -264,6 +264,8 @@ async function init() {
                 closeNamespaceTab(name);
             }
         }
-    })
+    });
+
+    document.getElementById("loading").innerHTML = "";
 
 }
