@@ -142,9 +142,10 @@ function openNamespaceTab(namespace) {
 
     ele.parentElement.innerHTML = htmlCode;
 
-    i = 0;
     for (let n in jsonData[namespace]) {
-        document.getElementById("func-" + n).addEventListener("click", function () {
+        const funcElement = document.getElementById("func-" + n);
+
+        funcElement.addEventListener("click", function () {
             openFunctionInformation(namespace, n, document.getElementById("func-" + n).innerHTML.substring(3));
         });
     }
@@ -159,7 +160,7 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
     const ele = document.getElementById("func-" + functionHash).parentElement;
     const nativeObj = jsonData[namespace][functionHash];
 
-    let newHTML = "<div class='funcbox'>" +
+    let newHTML = "<div style='padding-left: 1%;'><div class='funcbox'>" +
         "<h2>" + namespace + "::" + name + "</h2><hr>" +
         functionDeclHTML + "<hr>";
 
@@ -169,7 +170,7 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
         newHTML += nativeObj.comment;
     } else newHTML += "No comment available";
 
-    newHTML += "</p></div>";
+    newHTML += "</p></div></div>";
 
     ele.innerHTML += newHTML;
 
@@ -186,6 +187,20 @@ function closeFunctionInformation(funcElement, namespace, funcHash, funcDeclHTML
     })
 }
 
+function joaat(key) {
+    let hash = 0, i = 0;
+
+    for (i = 0; i < key.length; i++) {
+        hash += key.charCodeAt(i);
+        hash += (hash << 10);
+        hash ^= (hash >> 6);
+    }
+    hash += (hash << 3);
+    hash ^= (hash >> 11);
+    hash += (hash << 15);
+    return hash >>> 0;
+}
+
 async function init() {
     loadNativeInfo();
 
@@ -193,6 +208,7 @@ async function init() {
         await sleep(1);
     }
 
+    console.log(joaat("get_player_ped"))
     let namespaces = "";
     let nsCount = 0, nCount = 0, cCount = 0, kCount = 0;
     const v = getNamespaces();
@@ -243,7 +259,7 @@ async function init() {
 
         for (let ns in c) {
             let name = c[ns];
-            console.log(name);
+
             if (isNamespaceTabOpened(name)) {
                 closeNamespaceTab(name);
             }
