@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "Prototype";
-    src: url("/storage/fonts/Prototype.ttf")
-}
-
 #title {
     color: floralwhite;
     font-size: 30px;
@@ -35,12 +30,17 @@ li {
     color: ghostwhite;
 }
 
+p {
+    display: block;
+}
+
 a:link {
     color: ghostwhite;
 }
 
 a:hover {
-    color: lightblue;
+    color: cadetblue;
+    cursor: pointer;
 }
 
 #mainwindow {

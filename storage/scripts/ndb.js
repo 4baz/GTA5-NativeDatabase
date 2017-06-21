@@ -10,7 +10,7 @@ function loadNativeInfo() {
     const file = new XMLHttpRequest();
 
     file.overrideMimeType("application/json");
-    file.open("GET", "storage/NativeInfo.json", true);
+    file.open("GET", "https://raw.githubusercontent.com/DatBrick/NativeDatabase/master/Natives.json", true);
     file.onreadystatechange = function () {
         if (file.readyState === 4 && file.status === 200) {
             jsonData = JSON.parse(file.responseText);
@@ -19,7 +19,6 @@ function loadNativeInfo() {
 
     file.send(null);
 }
-
 
 // [============= Namespace Functions =============]
 function getNamespaces() {
@@ -157,11 +156,24 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
     const ele = document.getElementById("func-" + functionHash).parentElement;
     const nativeObj = jsonData[namespace][functionHash];
 
-    ele.innerHTML += "<div class='funcbox'>" +
+    let newHTML = "<div class='funcbox'>" +
         "<h2>" + namespace + "::" + name + "</h2><hr>" +
-            functionDeclHTML + "<hr>" +
-        (hasComment(nativeObj) ? nativeObj.comment : "No comment available!") + "<br>";
-    "</div>";
+        functionDeclHTML + "<hr>";
+
+    newHTML += "<p>";
+
+    if (hasComment(nativeObj)) {
+        const comment = nativeObj.comment;
+        const blocks = comment.split("\n");
+
+        for (let i = 0; i < blocks.length; i++) {
+            newHTML += blocks[i] + "\n<br>";
+        }
+    } else newHTML += "No comment available";
+
+    newHTML += "</p></div>";
+
+    ele.innerHTML = newHTML;
 
     document.getElementById("func-" + functionHash).addEventListener("click", function() {
         closeFunctionInformation(ele, namespace, functionHash, functionDeclHTML);
@@ -203,7 +215,7 @@ async function init() {
 
         nCount += nC;
         nsCount++;
-        namespaces += "<li><a id='ns-" + v[i] + "' title='" + v[i] + "'>" + v[i] + " [" + nC + "]</a></li>\n";
+        namespaces += "<li><a id='ns-" + v[i] + "'>" + v[i] + " [" + nC + "]</a></li>\n";
     }
 
     document.getElementById("nname").innerHTML = namespaces;
