@@ -40,7 +40,7 @@ a:link {
 
 a:hover {
     color: cadetblue;
-    cursor: pointer;
+    cursor: default;
 }
 
 #mainwindow {

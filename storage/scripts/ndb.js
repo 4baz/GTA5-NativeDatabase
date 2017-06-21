@@ -163,17 +163,12 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
     newHTML += "<p>";
 
     if (hasComment(nativeObj)) {
-        const comment = nativeObj.comment;
-        const blocks = comment.split("\n");
-
-        for (let i = 0; i < blocks.length; i++) {
-            newHTML += blocks[i] + "\n<br>";
-        }
+        newHTML += nativeObj.comment.replace("\n", "<br>");
     } else newHTML += "No comment available";
 
     newHTML += "</p></div>";
 
-    ele.innerHTML = newHTML;
+    ele.innerHTML += newHTML;
 
     document.getElementById("func-" + functionHash).addEventListener("click", function() {
         closeFunctionInformation(ele, namespace, functionHash, functionDeclHTML);
