@@ -1,7 +1,14 @@
+@font-face {
+    font-family: 'PricedownBl-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('PricedownBl-Regular'), url('../fonts/pricedown bl.woff') format('woff');
+}
+
 #title {
-    color: #101010;
-    font-size: 30px;
-    font-weight: bold;
+    color: ghostwhite;
+    font-size: 36px;
+    font-family: 'PricedownBl-Regular', sans;
     text-align: center;
 }
 
@@ -21,6 +28,8 @@
 }
 
 .externlink {
+    text-decoration: none;
+    color: #FFBA66;
 }
 
 .nohover {
