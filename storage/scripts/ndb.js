@@ -94,7 +94,6 @@ function closeNamespaceTab(namespace) {
     const c = ele.innerHTML.split("<ul")[0];
     ele.innerHTML = c;
     document.getElementById("ns-" + namespace).addEventListener("click", function () {
-        console.log("sup");
         openNamespaceTab(namespace);
     })
 }
@@ -176,7 +175,6 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
 }
 
 function closeFunctionInformation(funcElement, namespace, funcHash, funcDeclHTML) {
-    console.log(funcElement.innerHTML);
     funcElement.innerHTML = funcElement.innerHTML.split("<div")[0];
 
     document.getElementById("func-" + funcHash).addEventListener("click", function () {
@@ -210,7 +208,7 @@ async function init() {
 
         nCount += nC;
         nsCount++;
-        namespaces += "<li><a id='ns-" + v[i] + "'>" + v[i] + " [" + nC + "]</a></li>\n";
+        namespaces += "<li><a class='namespace' id='ns-" + v[i] + "'>" + v[i] + " [" + nC + "]</a></li>\n";
     }
 
     document.getElementById("nname").innerHTML = namespaces;
@@ -221,7 +219,8 @@ async function init() {
         })
     }
 
-    document.getElementById("infobox").innerHTML = "Namespaces: " + nsCount + " | " + "Natives: " + nCount + " | " + "Comments: " + cCount + " | " + "Known names: " + kCount;
+    const infobox = document.getElementById("infobox");
+    infobox.innerHTML = "<a class='nohover' style='float: left'>Namespaces: " + nsCount + " | " + "Natives: " + nCount + " | " + "Comments: " + cCount + " | " + "Known names: " + kCount + "</a>" + infobox.innerHTML;
 
     getNativeCount("APP");
 }

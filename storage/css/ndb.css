@@ -1,5 +1,5 @@
 #title {
-    color: floralwhite;
+    color: #101010;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -14,6 +14,19 @@
     min-width: 800px;
     width: 85%;
     color: ghostwhite;
+}
+
+#infobox {
+    padding-left: 2px;
+}
+
+.externlink {
+}
+
+.nohover {
+}
+
+.namespace {
 }
 
 body {
@@ -34,13 +47,25 @@ p {
     display: block;
 }
 
+a:hover {
+    color: cadetblue;
+    cursor: default;
+}
+
 a:link {
     color: ghostwhite;
 }
 
-a:hover {
-    color: cadetblue;
-    cursor: default;
+.externlink:hover {
+    color: darkorange !important;
+}
+
+.nohover:hover {
+    color: inherit !important;
+}
+
+.namespace:hover {
+    padding-left: 2px;
 }
 
 #mainwindow {
