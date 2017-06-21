@@ -10,6 +10,7 @@
     font-size: 36px;
     font-family: 'PricedownBl-Regular', sans;
     text-align: center;
+    font-variant-ligatures: none;
 }
 
 #mainwindow {
@@ -110,6 +111,9 @@ a:link {
     color: lightgray;
     font-family: consolas,"courier new",courier,monospace;
     font-size: 14px;
+    text-indent: -50px;
+    padding-left: 50px;
+    display: block;
 }
 
 .hash {

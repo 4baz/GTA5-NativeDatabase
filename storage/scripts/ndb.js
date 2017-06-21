@@ -66,6 +66,10 @@ function getNativeObjects(namespace) {
     return v;
 }
 
+function isNamespaceTabOpened(namespace) {
+    return document.getElementById("na-" + namespace.toUpperCase()) !== null;
+}
+
 // [============= Native Functions =============]
 
 function hasComment(native) {
@@ -222,5 +226,28 @@ async function init() {
     const infobox = document.getElementById("infobox");
     infobox.innerHTML = "<a class='nohover' style='float: left'>Namespaces: " + nsCount + " | " + "Natives: " + nCount + " | " + "Comments: " + cCount + " | " + "Known names: " + kCount + "</a>" + infobox.innerHTML;
 
-    getNativeCount("APP");
+    document.getElementById("expand").addEventListener("click", function () {
+        const c = getNamespaces();
+
+        for (let ns in c) {
+            let name = c[ns];
+
+            if (!isNamespaceTabOpened(name)) {
+                openNamespaceTab(name);
+            }
+        }
+    });
+
+    document.getElementById("collapse").addEventListener("click", function () {
+        const c = getNamespaces();
+
+        for (let ns in c) {
+            let name = c[ns];
+            console.log(name);
+            if (isNamespaceTabOpened(name)) {
+                closeNamespaceTab(name);
+            }
+        }
+    })
+
 }
