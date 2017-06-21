@@ -163,7 +163,7 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
     newHTML += "<p>";
 
     if (hasComment(nativeObj)) {
-        newHTML += nativeObj.comment.replace("\n", "<br>");
+        newHTML += nativeObj.comment.replace(new RegExp("\n", "g"), "<br>");
     } else newHTML += "No comment available";
 
     newHTML += "</p></div>";
