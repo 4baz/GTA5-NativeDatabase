@@ -160,10 +160,10 @@ function openFunctionInformation(namespace, functionHash, functionDeclHTML) {
         "<h2>" + namespace + "::" + name + "</h2><hr>" +
         functionDeclHTML + "<hr>";
 
-    newHTML += "<p>";
+    newHTML += "<p style='white-space: pre-wrap;'>";
 
     if (hasComment(nativeObj)) {
-        newHTML += nativeObj.comment.replace(new RegExp("\n", "g"), "<br>");
+        newHTML += nativeObj.comment;
     } else newHTML += "No comment available";
 
     newHTML += "</p></div>";
