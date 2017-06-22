@@ -44,6 +44,11 @@ body {
     font-family: Tahoma,Verdana,sans;
     font-size: 14px;
     overflow-y: scroll;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ul {
@@ -79,6 +84,13 @@ a:link {
     padding-left: 2px;
 }
 
+.natives {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
 #mainwindow {
     text-align: left;
     margin: 0 auto;
@@ -102,6 +114,33 @@ a:link {
     padding: 5px 8px 5px 10px;
     border-radius: 4px;
     border: 3px darkorange solid;
+}
+
+.buttonbox {
+    background: darkorange;
+    color: black;
+    font-family: "PricedownBl-Regular", sans;
+    font-variant-ligatures: none;
+    position: relative;
+    float: right;
+    width: 70px;
+    height: 24px;
+    text-align: center;
+    background-size: 200% 100%;
+    border-radius: 8px;
+    padding-top: 8px;
+    margin-top: -4%;
+}
+
+.buttonbox:hover {
+    cursor: default;
+    transition: 500ms;
+    color: darkslategray;
+}
+
+.buttonbox:active {
+    transition: 0ms;
+    transform: translateY(2px);
 }
 
 .datatype {
