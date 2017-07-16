@@ -91,17 +91,6 @@ a:link {
     user-select: text;
 }
 
-#mainwindow {
-    text-align: left;
-    margin: 0 auto;
-    background: rgb(26, 26, 26);
-    border: 1px ghostwhite solid;
-    padding: 1em;
-    min-width: 800px;
-    width: 85%;
-    color: ghostwhite;
-}
-
 #nname {
     color: ghostwhite;
     text-decoration: none;
