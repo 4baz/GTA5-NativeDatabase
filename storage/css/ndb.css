@@ -16,8 +16,8 @@
 #mainwindow {
     text-align: left;
     margin: 0 auto;
-    background: rgb(26, 26, 26);
-    border: 1px ghostwhite solid;
+    background: rgb(35, 35, 35);
+    border: 1px rgb(0, 0, 0) solid;
     padding: 1em;
     min-width: 800px;
     width: 85%;
@@ -40,7 +40,7 @@
 }
 
 body {
-    background: darkslategray;
+    background: rgb(20, 20, 20);
     font-family: Tahoma,Verdana,sans;
     font-size: 14px;
     overflow-y: scroll;
